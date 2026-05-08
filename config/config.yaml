@@ -1,0 +1,21 @@
+data:
+  raw_dir: data/raw/ # folder path and expects the following: data/parasitized and data/uninfected
+  train_split: 0.8 # 80% of images used for training and 20% for validation
+  seed: 42
+
+training:
+  image_size: [160, 160] # resizes the images to 160 x 160 - remember we had planned to work with 240x240 - the smaller the better for performnace
+  batch_size: 32 # number of images processed at once
+  epochs: 20 # maximum number of training passes
+  learning_rate: 0.001
+  dropout_rate: 0.35 # reducing or managing overfitting
+
+model:
+  output_dir: models
+  checkpoint_name: best_model.keras
+  final_name: malaria_cnn.keras
+
+reports:
+  output_dir: reports
+  history_name: training_history.json
+  metrics_name: evaluation_metrics.json
